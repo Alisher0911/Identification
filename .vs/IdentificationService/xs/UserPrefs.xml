@@ -1,0 +1,48 @@
+﻿<Properties StartupConfiguration="{ABADBC4F-E89E-40DE-9449-7FA5B5BFCDA6}|Default">
+  <MonoDevelop.Ide.ItemProperties.ProjectRegistration PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectRegistration/Controllers/AccountController.cs">
+    <Files>
+      <File FileName="ProjectRegistration/Models/ApplicationContext.cs" Line="17" Column="1" />
+      <File FileName="ProjectRegistration/Models/RegisterModel.cs" />
+      <File FileName="ProjectRegistration/Models/LoginModel.cs" />
+      <File FileName="ProjectRegistration/Views/Account/Register.cshtml" Line="5" Column="1" />
+      <File FileName="ProjectRegistration/Views/Account/Login.cshtml" Line="25" Column="42" />
+      <File FileName="ProjectRegistration/Services/EmailService.cs" Line="14" Column="69" />
+      <File FileName="ProjectRegistration/Controllers/AccountController.cs" Line="15" Column="13" />
+      <File FileName="ProjectRegistration/Models/User.cs" />
+      <File FileName="ProjectRegistration/Startup.cs" />
+      <File FileName="ProjectRegistration/appsettings.json" />
+      <File FileName="ProjectRegistration/Views/Home/Index.cshtml" />
+      <File FileName="ProjectRegistration/Views/Home/Privacy.cshtml" />
+      <File FileName="ProjectRegistration/Views/Shared/Error.cshtml" />
+      <File FileName="ProjectRegistration/Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="ProjectRegistration/Program.cs" />
+      <File FileName="ProjectRegistration/ProjectRegistration.csproj" />
+      <File FileName="ProjectRegistration/Views/Shared/_Layout.cshtml" Line="40" Column="46" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="IdentificationService" expanded="True">
+            <Node name="ProjectRegistration" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="AccountController.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
