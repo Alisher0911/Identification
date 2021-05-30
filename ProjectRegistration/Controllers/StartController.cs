@@ -48,8 +48,7 @@ namespace ProjectRegistration.Controllers
         public async Task<IActionResult> Project(ProjectDTO projectDTO)
         {
             User user = await _userManager.GetUserAsync(HttpContext.User);
-
-            var existingProject = _projects.GetProjectByEmail(user.Email);
+            var existingProject = await _projects.GetProjectByEmail(user.Email);
 
             if (existingProject == null)
             {
