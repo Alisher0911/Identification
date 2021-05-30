@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjectRegistration.Models;
+using ProjectRegistration.Repositories;
+using ProjectRegistration.Repositories.Interfaces;
 
 namespace ProjectRegistration
 {
@@ -32,6 +34,9 @@ namespace ProjectRegistration
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,23 @@
+﻿@model ProjectRegistration.DTOs.ProjectDTO
+@{ ViewData["Title"] = "Project"; }
+
+<div class="container js-instance">
+    <form method="post" asp-controller="Start" asp-action="Project">
+        <div class="flex-styling">
+            <div class="card-styling">
+                <div class="form-style">
+                    <div>
+                        <h2>My Project</h2>
+                        <div class="text-styling"> Creation Date:  </div>
+                        <input type="date" placeholder="April 14, 2021" class="input-styling" asp-for="CreationDate">
+                    </div>
+                    <div>
+                        <div class="text-styling tooltip"> Project Name <i class="fas fa-info-circle "></i></div>
+                        <input type="text" placeholder="Enter project name" class="input-styling" asp-for="Name">
+                    </div>
+                    <button type="submit" id="myButton" class="button-styling float-left submit-button">Create</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

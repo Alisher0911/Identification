@@ -3,26 +3,31 @@
     ViewData["Title"] = "Register";
 }
 
-
-<h2>Registration</h2>
-<form method="post" asp-controller="Account" asp-action="Register">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="PasswordConfirm"></label><br />
-        <input asp-for="PasswordConfirm" />
-        <span asp-validation-for="PasswordConfirm"></span>
-    </div>
-    <div>
-        <input type="submit" value="Registration" />
-    </div>
-</form>
+<div class="container js-instance">
+    <form method="post" asp-controller="Account" asp-action="Register">
+        <div class="flex-styling">
+            <div class="card-styling">
+                <div class="form-style">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div>
+                        <h2>Sign Up</h2>
+                        <div class="text-styling"> Email </div>
+                        <input placeholder="name@gmail.com" class="input-styling" asp-for="Email">
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                    <div>
+                        <div class="text-styling tooltip"> Password <i class="fas fa-info-circle "></i></div>
+                        <input type="password" placeholder="Enter strong password" class="input-styling" asp-for="Password">
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                    <div>
+                        <div class="text-styling tooltip"> Confirm Password <i class="fas fa-info-circle "></i></div>
+                        <input type="password" placeholder="Enter password again" class="input-styling" asp-for="PasswordConfirm">
+                        <span asp-validation-for="PasswordConfirm"></span>
+                    </div>
+                    <button type="submit" id="myButton" class="button-styling float-left submit-button"> Register </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

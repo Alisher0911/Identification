@@ -3,15 +3,245 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ProjectRegistration</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <title>@ViewData["Title"] HumanID</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />-->
+    <!--<link rel="stylesheet" href="~/css/site.css" />-->
+    <style>
+        .flex-styling {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            font-family: helvetica;
+        }
+
+        h2 {
+            color: blue;
+            padding-bottom: 15px;
+        }
+
+        .button-styling {
+            border: none;
+            background-color: blue;
+            color: white;
+            font-family: proxima nova;
+            padding: 8px 18px;
+            border-radius: 4px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .text-styling {
+            color: #6c757d;
+            font-family: proxima nova;
+            margin-top: 20px;
+        }
+
+        .input-styling {
+            padding: 10px 24px;
+            width: 250px;
+            margin: 10px 0px;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1.5px solid #ced4da;
+        }
+
+        .card-styling {
+            display: flex;
+            margin-top: 1%;
+            padding: 20px;
+            background-color: white;
+            color: #333533;
+            width: 400px;
+            height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 8px 8px 0 rgba(0, 0, 0.3, 0.3);
+            transition: 0.3s;
+        }
+
+        .card-styling:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
+        }
+
+        textarea:focus,
+        input:focus {
+            outline: none;
+        }
+
+        .button-styling:hover {
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            color: #ced4da;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        .password-row-style {
+            flex-direction: row;
+        }
+
+        .form-style {
+            margin-left: 80px;
+        }
+
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: "8 characters and 1 symbol";
+            top: 0;
+            left: 20%;
+            background-color: #313247;
+            border-radius: 4px;
+            color: #fff;
+            display: none;
+            padding: 15px 15px 15px 15px;
+            font-size: 10px;
+            position: absolute;
+            transform: translate(-20%, calc(-100% - 10px));
+        }
+
+        .tooltip:hover::after {
+            display: block;
+        }
+
+        h3 {
+            color: #6c757d;
+        }
+
+        * {
+            margin: auto 0;
+        }
+
+        nav {
+            background-color: blue;
+        }
+
+        .main-nav {
+            display: flex;
+            list-style: none;
+            font-size: 1em;
+            margin: 0;
+        }
+
+        @@media only screen and (max-width: 600px) {
+            .main-nav {
+                font-size: 0.7em;
+                padding: 0;
+            }
+        }
+        /* faz o contato ir para o lado direito da pagina */
+        .push {
+            margin-left: auto;
+        }
+
+        li {
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        html {
+            background-color: white;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        body {
+            font-family: "Oswald", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+
+        h1 {
+            line-height: .95;
+            color: black;
+            font-weight: 900;
+            font-size: 30px;
+            text-transform: uppercase;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .center {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 581px;
+            height: 50%;
+        }
+
+        .btn {
+            margin: auto;
+            width: 170px;
+            height: 60px;
+            padding: 6px 0 0 3px;
+            border: 2px solid blue;
+            border-radius: 2px;
+            background: none;
+            font-size: 16px;
+            line-height: 54px;
+            color: blue;
+            letter-spacing: .25em;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            vertical-align: middle;
+            text-align: center;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-transition: background .4s, color .4s;
+            transition: background .4s, color .4s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: blue;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="/Home/Index">HUMAN-ID</a></li>
+            @if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                <li><a href="/Start/Index">Account</a></li>
+                <li><a href="/Start/Project">Project</a></li>
+                <li><a href="/Start/Apikey">API Key</a></li>
+                <li class="push"><a asp-controller="Account" asp-action="Logout" class="btn btn-danger" style="color: black;">Log Out</a></li>
+            }
+        </ul>
+    </nav><br><br>
+    <!--<header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProjectRegistration</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Human ID</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,18 +258,18 @@
                 </div>
             </div>
         </nav>
-    </header>
+    </header>-->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <!--<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - ProjectRegistration
         </div>
-    </footer>
+    </footer>-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

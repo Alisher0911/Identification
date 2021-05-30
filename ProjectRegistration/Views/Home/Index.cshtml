@@ -1,8 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+﻿<div class="center">
+    <center><h1>Welcome! Now you are free to get an API to identification service!</h1></center><br>
+    @if (User?.Identity?.IsAuthenticated ?? false)
+    {
+        <center><h2>You are logged in. Go to your <a href="/Start/Index" style="color: red;">Account</a></h2></center>
+    }
+    else
+    {
+        <div id="myButton" class="btn float-left submit-button"><a href="/Account/Register" style="color: black;">Register</a></div>
+        <br />
+        <div id="myButton" class="btn float-left submit-button"><a href="/Account/Login" style="color: black;">Login</a></div>
+    }
 </div>

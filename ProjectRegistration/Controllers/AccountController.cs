@@ -12,7 +12,6 @@ using ProjectRegistration.Services;
 
 namespace ProjectRegistration.Controllers
 {
-    [Route("[controller]")]
     public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -25,14 +24,18 @@ namespace ProjectRegistration.Controllers
         }
 
 
+        public IActionResult Index()
+        {
+            return Content("Logged In");
+        }
 
-        [HttpGet("Register")]
+
         public IActionResult Register()
         {
             return View();
         }
 
-        [HttpPost("Register")]
+        [HttpPost]
         public async Task<IActionResult> Register(RegisterModel model)
         {
             if (ModelState.IsValid)
@@ -69,7 +72,6 @@ namespace ProjectRegistration.Controllers
 
 
 
-        [HttpGet("ConfirmEmail")]
         [AllowAnonymous]
         public async Task<IActionResult> ConfirmEmail(string userId, string code)
         {
@@ -86,21 +88,22 @@ namespace ProjectRegistration.Controllers
 
             var result = await _userManager.ConfirmEmailAsync(user, code);
             if (result.Succeeded)
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Account");
             else
                 return View("Error");
         }
 
 
 
-        [HttpGet("Login")]
+        [AllowAnonymous]
         public IActionResult Login(string returnUrl = null)
         {
             return View(new LoginModel { ReturnUrl = returnUrl });
         }
 
 
-        [HttpPost("Login")]
+        [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model)
         {
@@ -119,7 +122,7 @@ namespace ProjectRegistration.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Start");
                 }
                 else
                 {
@@ -130,10 +133,7 @@ namespace ProjectRegistration.Controllers
         }
 
 
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> LogOff()
+        public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");

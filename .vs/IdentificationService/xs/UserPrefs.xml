@@ -1,24 +1,37 @@
 ﻿<Properties StartupConfiguration="{ABADBC4F-E89E-40DE-9449-7FA5B5BFCDA6}|Default">
   <MonoDevelop.Ide.ItemProperties.ProjectRegistration PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectRegistration/Controllers/AccountController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectRegistration/Controllers/StartController.cs">
     <Files>
-      <File FileName="ProjectRegistration/Models/ApplicationContext.cs" Line="17" Column="1" />
+      <File FileName="ProjectRegistration/Models/ApplicationContext.cs" Line="9" Column="6" />
       <File FileName="ProjectRegistration/Models/RegisterModel.cs" />
       <File FileName="ProjectRegistration/Models/LoginModel.cs" />
-      <File FileName="ProjectRegistration/Views/Account/Register.cshtml" Line="5" Column="1" />
-      <File FileName="ProjectRegistration/Views/Account/Login.cshtml" Line="25" Column="42" />
-      <File FileName="ProjectRegistration/Services/EmailService.cs" Line="14" Column="69" />
-      <File FileName="ProjectRegistration/Controllers/AccountController.cs" Line="15" Column="13" />
+      <File FileName="ProjectRegistration/Views/Account/Register.cshtml" />
+      <File FileName="ProjectRegistration/Views/Account/Login.cshtml" />
+      <File FileName="ProjectRegistration/Services/EmailService.cs" />
+      <File FileName="ProjectRegistration/Controllers/AccountController.cs" />
       <File FileName="ProjectRegistration/Models/User.cs" />
       <File FileName="ProjectRegistration/Startup.cs" />
       <File FileName="ProjectRegistration/appsettings.json" />
       <File FileName="ProjectRegistration/Views/Home/Index.cshtml" />
       <File FileName="ProjectRegistration/Views/Home/Privacy.cshtml" />
       <File FileName="ProjectRegistration/Views/Shared/Error.cshtml" />
-      <File FileName="ProjectRegistration/Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="ProjectRegistration/Models/ErrorViewModel.cs" />
       <File FileName="ProjectRegistration/Program.cs" />
       <File FileName="ProjectRegistration/ProjectRegistration.csproj" />
-      <File FileName="ProjectRegistration/Views/Shared/_Layout.cshtml" Line="40" Column="46" />
+      <File FileName="ProjectRegistration/Views/Shared/_Layout.cshtml" />
+      <File FileName="ProjectRegistration/Controllers/HomeController.cs" />
+      <File FileName="ProjectRegistration/wwwroot/css/site.css" />
+      <File FileName="ProjectRegistration/Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="ProjectRegistration/Controllers/StartController.cs" Line="70" Column="10" />
+      <File FileName="ProjectRegistration/Views/Start/Index.cshtml" />
+      <File FileName="ProjectRegistration/Services/ApiService.cs" />
+      <File FileName="ProjectRegistration/Views/Start/Project.cshtml" />
+      <File FileName="ProjectRegistration/Views/Start/Apikey.cshtml" />
+      <File FileName="ProjectRegistration/Models/Project.cs" />
+      <File FileName="ProjectRegistration/DTOs/ProjectDTO.cs" />
+      <File FileName="ProjectRegistration/Profiles/ProjectProfile.cs" />
+      <File FileName="ProjectRegistration/Repositories/Interfaces/IProjectRepository.cs" />
+      <File FileName="ProjectRegistration/Repositories/ProjectRepository.cs" Line="29" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,13 +39,15 @@
           <Node name="IdentificationService" expanded="True">
             <Node name="ProjectRegistration" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="AccountController.cs" selected="True" />
+                <Node name="StartController.cs" selected="True" />
               </Node>
+              <Node name="Repositories" expanded="True" />
+              <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Start" expanded="True" />
               </Node>
-              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>
